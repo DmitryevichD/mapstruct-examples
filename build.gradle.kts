@@ -20,7 +20,15 @@ repositories {
     mavenCentral()
 }
 
+val mapstructVersion = "1.5.5.Final"
+val apacheCommonVersion = "3.13.0"
+
 dependencies {
+    implementation("org.mapstruct:mapstruct:$mapstructVersion")
+    annotationProcessor("org.mapstruct:mapstruct-processor:$mapstructVersion")
+
+    implementation("org.apache.commons:commons-lang3:$apacheCommonVersion")
+
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
