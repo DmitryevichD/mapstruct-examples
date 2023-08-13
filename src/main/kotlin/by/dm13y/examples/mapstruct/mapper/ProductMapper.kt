@@ -3,10 +3,8 @@ package by.dm13y.examples.mapstruct.mapper
 import by.dm13y.examples.mapstruct.config.mapper.ProductMapperConfig
 import by.dm13y.examples.mapstruct.model.dto.ProductDto
 import by.dm13y.examples.mapstruct.model.entity.Product
-import org.mapstruct.Context
-import org.mapstruct.Mapper
-import org.mapstruct.Mapping
-import org.mapstruct.Named
+import org.mapstruct.*
+import java.time.LocalDateTime
 import kotlin.reflect.KFunction1
 
 @Mapper(componentModel = "spring", config = ProductMapperConfig::class)
@@ -24,4 +22,9 @@ interface ProductMapper {
     @Named("getOwnerByName")
     fun getOwnerByName(ownerId: Int, @Context ownerNameFunction: KFunction1<Int, String>): String =
         ownerNameFunction.call(ownerId)
+
+    @AfterMapping
+    fun udpateDate(@MappingTarget product: Product) {
+        product.mappingDate = LocalDateTime.now()
+    }
 }

@@ -29,6 +29,7 @@ dependencies {
     implementation("org.mapstruct:mapstruct:$mapstructVersion")
 
     kapt("org.mapstruct:mapstruct-processor:$mapstructVersion")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2")
     implementation("org.apache.commons:commons-lang3:$apacheCommonVersion")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
