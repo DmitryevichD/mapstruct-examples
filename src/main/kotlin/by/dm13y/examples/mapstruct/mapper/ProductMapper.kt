@@ -11,4 +11,6 @@ interface ProductMapper {
 
     @Mapping(source = "productName", target = "name")
     fun toProduct(productDto: ProductDto): Product
+
+    fun toProducts(productDtos: List<ProductDto>): List<Product>
 }

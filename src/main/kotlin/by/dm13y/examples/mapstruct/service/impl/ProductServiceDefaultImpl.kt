@@ -16,4 +16,11 @@ class ProductServiceDefaultImpl(
         println("ProductDto: ${productDto.toPretty()}")
         println("Product: ${product.toPretty()}")
     }
+
+    override fun printProducts(productDtos: List<ProductDto>) {
+        val products = productMapper.toProducts(productDtos)
+
+        println("ProductDto: ${productDtos.toPretty()}")
+        println("Product: ${products.toPretty()}")
+    }
 }

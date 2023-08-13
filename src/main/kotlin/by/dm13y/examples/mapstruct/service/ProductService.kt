@@ -11,4 +11,9 @@ interface ProductService {
      * Convert productDto to product and out them to console
      */
     fun printProduct(productDto: ProductDto)
+
+    /**
+     * Convert productDto list to product list and out them to console
+     */
+    fun printProducts(products: List<ProductDto>)
 }

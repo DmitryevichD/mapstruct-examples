@@ -5,6 +5,7 @@ import by.dm13y.examples.mapstruct.model.enums.ProductType
 import org.apache.commons.lang3.RandomUtils.nextLong
 import org.apache.commons.lang3.RandomUtils.nextDouble
 import org.apache.commons.lang3.RandomUtils.nextInt
+import java.util.stream.IntStream
 
 
 object ProductGenerator {
@@ -16,6 +17,10 @@ object ProductGenerator {
             productName = getRandomProductName()
         )
 
+    fun generateProductDtos(numberDto:Int): List<ProductDto> =
+        IntStream.of(0, numberDto)
+            .mapToObj() { _ -> generateProductDto() }
+            .toList()
 
     private fun getRandomProductType(): String =
         nextInt(0, 3)

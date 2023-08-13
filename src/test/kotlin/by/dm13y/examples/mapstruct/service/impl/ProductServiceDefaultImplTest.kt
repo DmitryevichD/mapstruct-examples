@@ -17,4 +17,10 @@ class ProductServiceDefaultImplTest {
         val productDto = ProductGenerator.generateProductDto()
         productService.printProduct(productDto)
     }
+
+    @Test
+    fun printProducts() {
+        val products = ProductGenerator.generateProductDtos(3)
+        productService.printProducts(products)
+    }
 }
