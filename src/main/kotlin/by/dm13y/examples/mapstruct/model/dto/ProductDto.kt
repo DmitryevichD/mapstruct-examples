@@ -6,4 +6,5 @@ data class ProductDto(
     var cashBack: Double? = null,
     var type: String? = null,
     var productName: String? = null,
+    var ownerId: Int? = null,
 )

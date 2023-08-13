@@ -14,7 +14,8 @@ object ProductGenerator {
             cardCode = nextLong(),
             cashBack = nextDouble(),
             type = getRandomProductType(),
-            productName = getRandomProductName()
+            productName = getRandomProductName(),
+            ownerId = 10
         )
 
     fun generateProductDtos(numberDto:Int): List<ProductDto> =

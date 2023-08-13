@@ -13,6 +13,12 @@ interface ProductService {
     fun printProduct(productDto: ProductDto)
 
     /**
+     * Convert productDto to product and out them to console
+     */
+    fun printProductAndOwner(productDto: ProductDto)
+
+
+    /**
      * Convert productDto list to product list and out them to console
      */
     fun printProducts(products: List<ProductDto>)
