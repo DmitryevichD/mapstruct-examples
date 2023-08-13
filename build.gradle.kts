@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 plugins {
     val kotlinVersion = "1.8.21"
@@ -7,6 +8,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.15.RELEASE"
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
+    kotlin("kapt") version kotlinVersion
 }
 
 group = "by.dm13y.examples"
@@ -25,10 +27,9 @@ val apacheCommonVersion = "3.13.0"
 
 dependencies {
     implementation("org.mapstruct:mapstruct:$mapstructVersion")
-    annotationProcessor("org.mapstruct:mapstruct-processor:$mapstructVersion")
 
+    kapt("org.mapstruct:mapstruct-processor:$mapstructVersion")
     implementation("org.apache.commons:commons-lang3:$apacheCommonVersion")
-
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
